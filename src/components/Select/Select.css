@@ -1,0 +1,47 @@
+.select-container {
+    position: relative;
+    width: 150px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.selected-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #23325f;
+}
+
+.arrow {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 100;
+}
+
+.option {
+    padding: 10px;
+    color: #23325f;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
