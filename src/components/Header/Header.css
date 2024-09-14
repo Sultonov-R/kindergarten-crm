@@ -11,6 +11,7 @@
     top: 0;
     left: 0;
     height: 96px;
+    z-index: 999;
 }
 
 .search-bar {
@@ -83,7 +84,7 @@
 
 .notification-badge {
     position: absolute;
-    top:4px;
+    top: 4px;
     right: 2px;
     width: 15px;
     height: 15px;

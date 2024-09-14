@@ -7,11 +7,11 @@ import AddParents from "./Pages/Parents/AddParents/AddParents";
 import Parents from "./Pages/Parents/Parents/Parents";
 import Setting from "./Pages/Settings/Setting";
 import AddStudent from "./Pages/Students/AddStudents/AddStudent";
-import Student from "./Pages/Students/Students/Student";
 import AddTeacher from "./Pages/Teachers/AddTeachers/AddTeacher";
 import Teacher from "./Pages/Teachers/Teachers/Teacher";
 import Report from "./Pages/Report/Report";
 import Layout from "./components/Layout/Layout";
+import Student from "./Pages/Students/Students/Student";
 
 function App() {
   return (

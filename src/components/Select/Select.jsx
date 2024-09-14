@@ -19,7 +19,9 @@ const Select = () => {
     <div className="select-container">
       <div className="selected-option" onClick={toggleDropdown}>
         {selectedOption}
-        <span className={`arrow ${isOpen ? "open" : ""}`}>{images.bottom}</span>
+        <span className={`arrow ${isOpen ? "open" : ""}`}>
+          <img width={24} src={images.bottom} alt="" />
+        </span>
       </div>
       {isOpen && (
         <div className="dropdown-options">

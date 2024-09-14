@@ -1,0 +1,41 @@
+.studentss-wrapper {
+    width: calc(100% -237px);
+    height: 100vh;
+    margin-left: 237px;
+    margin-top: 100px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-bottom: 1px solid var(--color-light-gray-2);
+}
+
+.table-header h3 {
+    font-family: Mada;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 33.8px;
+    text-align: left;
+    color: var(--color-primary-3);
+}
+
+.table-header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.table-header-actions .ant-btn {
+    display: flex;
+    align-items: center;
+}
+
+.table-header-actions .ant-btn svg {
+    margin-right: 5px;
+}
+.table-body {
+    margin-top: 50px;
+}
