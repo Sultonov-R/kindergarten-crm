@@ -2,8 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Mada;
 }
+
 :root {
   --color-primary-1: #557C83;
   --color-primary-2: #3AADA8;
@@ -16,4 +17,8 @@
   --color-blue-1: #C3E1FF;
   --color-accent-2: #68E3DE;
   --color-primary-4: #8AC5C2;
+}
+
+body {
+  background-color: var(--color-light-gray-1)
 }
