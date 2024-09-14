@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Pagination.css"; // Assuming you have a CSS file for styling
+import "./Pagination.css"; 
 import images from "../../images";
 
 const Pagination = ({

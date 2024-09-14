@@ -2,26 +2,26 @@ import React, { useState } from "react";
 import "./StudentTable.css";
 import images from "../../images";
 
-const StudentTable = () => {
+const StudentTable = ({
+  student,
+  index,
+  showDetails = true, // prop to control detailed view
+  isCompactView = false, // prop to control compact view like in the first image
+  isEditable = true, // prop to control edit/delete buttons
+}) => {
   const [isChecked, setIsChecked] = useState(false);
+
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
   return (
-    <table className="student-table">
-      {/* <thead>
-        <tr>
-          <th>#</th>
-          <th>Bolalar F.I.O</th>
-          <th>Tug'ilgan sana</th>
-          <th>Jinsi</th>
-          <th>Guruh raqami</th>
-          <th>Davomat</th>
-          <th>To'lov</th>
-          <th>Imkoniyatlar</th>
-        </tr>
-      </thead> */}
+    <table
+      style={{
+        border: isChecked ? "none" : "1px solid var(--color-light-gray-2)",
+      }}
+      className={`student-table ${isCompactView ? "compact" : ""}`}
+    >
       <tbody>
         <tr
           className="user-action-row"
@@ -30,7 +30,7 @@ const StudentTable = () => {
             boxShadow: isChecked ? "2px 2px 4px 0px #0000001A" : "",
           }}
         >
-          <td>
+          <td style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <input
               checked={isChecked}
               onChange={handleCheckboxChange}
@@ -38,51 +38,74 @@ const StudentTable = () => {
               type="checkbox"
               className="user-checkbox"
             />
-            <span className="user-index">2</span>
+            <span className="user-index">{index + 1}</span>
           </td>
           <td className="user-image-name">
-            <img src={images.user} alt="Avatar" className="user-avatar" />
-            <span className="user-name">Nodirova Shodiya Tursinjon qizi</span>
-          </td>
-          <td className="user-birthdate">15.05.2021</td>
-          <td className="user-gender">Qiz bola</td>
-          <td className="user-group">15-guruh</td>
-          <td>
-            <button className="status-button inactive">
-              <img height={24} width={24} src={images.falseIcon} alt="" />
-            </button>
-          </td>
-          <td>
-            <button
-              style={{
-                boxShadow: isChecked ? "2px 2px 2px 0px #0000001A" : "",
-              }}
-              className="action-button"
+            <img
+              src={student.avatar || images.user}
+              alt="Avatar"
+              className="user-avatar"
+            />
+            <span
+              style={{ color: "var(--color-primary-3)" }}
+              className="user-name"
             >
-              To'lov
-            </button>
+              {student.name}
+            </span>
           </td>
-          <td className="edit-delete-buttons">
-            <button
-              style={{
-                border: isChecked ? "1px solid #F1F1F1" : "",
-                borderRadius: isChecked ? "100px" : "",
-                width: "36px",
-                height: "36px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: isChecked ? "#F9F9F9" : "",
-                boxShadow: isChecked ? "2px 2px 2px 0px #0000001A" : "",
-              }}
-              className="edit-button"
-            >
-              <img height={24} width={24} src={images.pen_icon} alt="" />
-            </button>
-            <button className="delete-button">
-              <img height={24} width={24} src={images.deleteIcon} alt="" />
-            </button>
+
+          {/* Conditionally render details if showDetails is true */}
+          {showDetails && (
+            <>
+              <td className="user-birthdate">{student.birthdate}</td>
+              <td
+                className={`user-gender ${
+                  student.gender === "Qiz bola" ? "red-text" : "blue-text"
+                }`}
+              >
+                {student.gender}
+              </td>
+              <td className="user-group">{student.group}</td>
+            </>
+          )}
+
+          {/* Conditionally render payment status */}
+          {!isCompactView && (
+            <td>
+              <button className="status-button inactive">
+                <img
+                  height={24}
+                  width={24}
+                  src={
+                    student.paymentStatus ? images.trueIcon : images.falseIcon
+                  }
+                  alt={student.paymentStatus ? "Paid" : "Not Paid"}
+                />
+              </button>
+            </td>
+          )}
+
+          {/* Conditionally render payment button */}
+          <td>
+            <button className="action-button">To'lov</button>
           </td>
+
+          {/* Conditionally render edit/delete buttons if isEditable is true */}
+          {isEditable && (
+            <td className="edit-delete-buttons">
+              <button className="edit-button">
+                <img height={24} width={24} src={images.pen_icon} alt="edit" />
+              </button>
+              <button className="delete-button">
+                <img
+                  height={24}
+                  width={24}
+                  src={images.deleteIcon}
+                  alt="delete"
+                />
+              </button>
+            </td>
+          )}
         </tr>
       </tbody>
     </table>
