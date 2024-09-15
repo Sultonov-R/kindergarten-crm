@@ -1,48 +1,61 @@
 import React from "react";
+import DataTable from "../../../components/DataTable/DataTable";
 import "./Student.css";
-import Button from "../../../components/Button/Button";
-import StudentTable from "../../../components/StudentTable/StudentTable";
-import Pagination from "../../../components/Pagination/Pagination";
-import images from "../../../images";
 
-const studentData = {
-  avatar: images.user, 
-  name: "Sultonov Shokirjon Tursinjon o'g'li",
-  birthdate: "15.05.2021",
-  gender: "O'g'il bola",
-  group: "15-guruh",
-  paymentStatus: false, 
-};
+const StudentPage = () => {
+  const students = [
+    {
+      id: 1,
+      name: "Sultonov Shokirjon Tursinjon o'g'li",
+      birthDate: "15.05.2021",
+      gender: "O'g'il bola",
+      group: "15-gurux",
+      attendance: true,
+    },
+    {
+      id: 2,
+      name: "Nodirova Shodiya Tursinjon qizi",
+      birthDate: "15.05.2021",
+      gender: "Qiz bola",
+      group: "15-gurux",
+      attendance: false,
+    },
+  ];
+  const teachers = [
+    {
+      id: 1,
+      name: "Sultonov Shokirjon Tursinjon o'g'li",
+      birthDate: "15.05.2021",
+      gender: "O'g'il bola",
+      group: "+998965865745",
+      attendance: true,
+    },
+    {
+      id: 2,
+      name: "Nodirova Shodiya Tursinjon qizi",
+      birthDate: "15.05.2021",
+      gender: "Qiz bola",
+      contact: "+998914747485",
+      attendance: false,
+    },
+  ];
 
-function Student() {
   return (
     <div className="studentss-wrapper">
-      <div className="table-header">
-        <h3>O'quvchilar jadvali</h3>
-        <Button />
-      </div>
-      <div className="table-body">
-        <StudentTable
-          student={studentData}
-          index={1}
-          showDetails={true}
-          isCompactView={false}
-          isEditable={true}
-        />
-
-        <StudentTable
-          student={studentData}
-          index={2}
-          showDetails={true}
-          isCompactView={false}
-          isEditable={true}
-        />
-      </div>
-      <footer className="footer">
-        <Pagination />
-      </footer>
+      <h1>Student Page</h1>
+      <DataTable
+        students={teachers}
+        columns={[
+          "#",
+          "O'qituvchilar F.I.O",
+          "Tug'ilgan sana",
+          "Jinsi",
+          "Kontakt",
+          "Imkoniyatlar",
+        ]}
+      />
     </div>
   );
-}
+};
 
-export default Student;
+export default StudentPage;

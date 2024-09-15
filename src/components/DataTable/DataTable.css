@@ -1,0 +1,128 @@
+.student-table {
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    border: none;
+}
+
+.student-table th,
+.student-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: none;
+    font-size: 14px;
+}
+
+.student-table th {
+    color: var(--color-gray);
+    font-weight: normal;
+    font-family: Mada;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20.8px;
+    text-align: left;
+
+}
+
+.student-info {
+    display: flex;
+    align-items: center;
+}
+
+.student-info img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.gender {
+    font-weight: bold;
+    color: #009688;
+}
+
+.birthday,
+.student-info,
+.groups {
+    font-family: Mada;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
+    color: var(--color-primary-3);
+
+}
+
+/* .groups, .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.student-table td[style*="red"] {
+    color: #f44336;
+}
+
+.attendance-yes {
+    color: #009688;
+}
+
+.attendance-no {
+    color: #f44336;
+}
+
+.payment-btn {
+    width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid #e0e0e0;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: #757575;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* .payment-btn:hover {
+    background-color: #e0e0e0;
+} */
+
+.delete-edit {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: "6px",
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #009688;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #009688;
+}
+
+.student-table tbody tr {
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.student-table tbody tr:hover {
+    background-color: #f1f1f1;
+}

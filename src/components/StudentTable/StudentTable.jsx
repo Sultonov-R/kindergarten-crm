@@ -5,9 +5,9 @@ import images from "../../images";
 const StudentTable = ({
   student,
   index,
-  showDetails = true, // prop to control detailed view
-  isCompactView = false, // prop to control compact view like in the first image
-  isEditable = true, // prop to control edit/delete buttons
+  showDetails = true,
+  isCompactView = false,
+  isEditable = true,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -22,6 +22,14 @@ const StudentTable = ({
       }}
       className={`student-table ${isCompactView ? "compact" : ""}`}
     >
+      <table>
+        <thead>
+          {column.map()}
+        </thead>
+        <tbody>
+          {data.mapt}
+        </tbody>
+      </table>
       <tbody>
         <tr
           className="user-action-row"
@@ -54,7 +62,6 @@ const StudentTable = ({
             </span>
           </td>
 
-          {/* Conditionally render details if showDetails is true */}
           {showDetails && (
             <>
               <td className="user-birthdate">{student.birthdate}</td>
@@ -69,7 +76,6 @@ const StudentTable = ({
             </>
           )}
 
-          {/* Conditionally render payment status */}
           {!isCompactView && (
             <td>
               <button className="status-button inactive">
@@ -85,12 +91,10 @@ const StudentTable = ({
             </td>
           )}
 
-          {/* Conditionally render payment button */}
           <td>
             <button className="action-button">To'lov</button>
           </td>
 
-          {/* Conditionally render edit/delete buttons if isEditable is true */}
           {isEditable && (
             <td className="edit-delete-buttons">
               <button className="edit-button">
