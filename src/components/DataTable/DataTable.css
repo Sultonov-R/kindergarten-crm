@@ -1,18 +1,19 @@
 .student-table {
-    width: 90%;
+    width: 1200px;
     border-collapse: separate;
     border-spacing: 0 10px;
     background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
     border: none;
+
 }
 
 .student-table th,
 .student-table td {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
     border-bottom: none;
     font-size: 14px;
+    border:1px solid red;
 }
 
 .student-table th {
@@ -26,9 +27,16 @@
 
 }
 
-.student-info {
+.checkbox-index {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.person-info {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .student-info img {
@@ -78,13 +86,16 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    border: 1px solid #e0e0e0;
-    padding: 5px 15px;
+    border: 1px solid var(--color-light-gray-2);
+    padding: 6px;
     cursor: pointer;
-    color: #757575;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+    color: var(--color-primary-3);
+    border-radius: 4px;
+    font-family: Mada;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    text-align: left;
 }
 
 /* .payment-btn:hover {
@@ -95,10 +106,13 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    align-items: center;
 }
 
 .edit-btn,
 .delete-btn {
+    width: 36px;
+    height: 36px;
     background: none;
     border: 1px solid transparent;
     cursor: pointer;

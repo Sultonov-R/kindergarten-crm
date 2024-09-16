@@ -1,6 +1,7 @@
 .table-header-actions {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .add-button {
@@ -40,4 +41,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+.filtering {
+    position: relative;
 }

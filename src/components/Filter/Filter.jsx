@@ -4,7 +4,7 @@ import InputSelect from "../InputSelect/InputSelect";
 import Checkbox from "../Checkbox/Checkbox";
 import images from "../../images";
 
-const Filter = () => {
+const Filter = ({ closeFilter }) => {
   const [birthDate, setBirthDate] = useState("");
   const [gender, setGender] = useState("");
   const [groupNumber, setGroupNumber] = useState("");
@@ -21,14 +21,15 @@ const Filter = () => {
         no: attendanceNo,
       },
     });
+    closeFilter(); // Close the filter modal after saving
   };
 
   return (
     <div className="filter-modal">
       <div className="filter-header">
         <h3>Filtr</h3>
-        <button className="close-btn">
-          <img width={24} src={images.x_icon} alt="sss" />
+        <button className="close-btn" onClick={closeFilter}>
+          <img width={24} src={images.x_icon} alt="close" />
         </button>
       </div>
       <div className="filter-body">
@@ -50,12 +51,6 @@ const Filter = () => {
           onChange={(e) => setGroupNumber(e.target.value)}
           options={["1", "2", "3"]}
         />
-        <InputSelect
-          label="Davomat"
-          value=""
-          onChange={() => {}}
-          options={[""]}
-        />
         <div>
           <Checkbox
             label="Ha"
@@ -71,7 +66,7 @@ const Filter = () => {
       </div>
       <div className="filter-footer">
         <button className="save-button" onClick={handleSave}>
-          <img width={24} src={images.success} alt="true" />
+          <img width={24} src={images.success} alt="save" />
           <span>Saqlash</span>
         </button>
       </div>

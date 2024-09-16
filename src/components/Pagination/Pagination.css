@@ -34,7 +34,7 @@
     justify-content: center;
 }
 
-.custom-select-container {
+.custom-selects-container {
     position: relative;
     display: inline-block;
     margin-left: 10px;
@@ -42,7 +42,7 @@
     font-size: 20px;
 }
 
-.custom-select {
+.custom-selects {
     width: 39px;
     height: 33px;
     display: flex;
@@ -58,7 +58,7 @@
     border: none;
 }
 
-.custom-select-arrow {
+.custom-selects-arrow {
     position: absolute;
     top: 50%;
     right: 60%;
@@ -68,11 +68,11 @@
     color: #95A5A6;
 }
 
-.custom-select:focus {
+.custom-selects:focus {
     border-bottom: 2px solid #1ABC9C;
 }
 
-.custom-select-container::after {
+.custom-selects-container::after {
     content: '';
     display: block;
     width: 39px;
