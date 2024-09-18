@@ -29,7 +29,6 @@ const DataTable = ({ data = [], type, person }) => {
     }));
   };
 
-  // Define headers for each type
   const getHeadersByType = (type) => {
     switch (type) {
       case "students":
@@ -63,6 +62,7 @@ const DataTable = ({ data = [], type, person }) => {
           "Maktab davomiyligi",
           "To'lov holati",
           "Kasbi",
+          "Imkoniyatlar",
         ];
       case "reports":
         return ["#", "Bolalar F.I.O", "Sana", "Summa"];
@@ -82,7 +82,30 @@ const DataTable = ({ data = [], type, person }) => {
       <thead>
         <tr>
           {headers.map((header) => (
-            <th key={header}>{header}</th>
+            <th
+              key={header}
+              style={{
+                width:
+                  header === "Sana"
+                    ? "30%"
+                    : header === "#"
+                    ? "7%"
+                    : header === "Davomat"
+                    ? "10%"
+                    : "auto",
+
+                textAlign:
+                  header === "Imkoniyatlar"
+                    ? "right"
+                    : header === "#"
+                    ? "center"
+                    : header === "Davomat"
+                    ? "center"
+                    : "left",
+              }}
+            >
+              {header}
+            </th>
           ))}
         </tr>
       </thead>
@@ -219,7 +242,7 @@ const DataTable = ({ data = [], type, person }) => {
             {/* Groups */}
             {type === "groups" && (
               <>
-                <td>{person.name}</td>
+                <td className="names-person">{person.name}</td>
                 <td className="start-date">{person.startDate}</td>
                 <td className="level">{person.level}</td>
                 <td className="delete-edit">
@@ -247,11 +270,29 @@ const DataTable = ({ data = [], type, person }) => {
             {type === "parents" && (
               <>
                 <td>{person.name}</td>
-                <td className="phone-number">{person.phoneNumber}</td>
-                <td className="children-count">{person.childrenCount}</td>
-                <td className="school-attendance">{person.schoolAttendance}</td>
-                <td className="payment-status">{person.paymentStatus}</td>
-                <td className="job">{person.job}</td>
+                <td className="phone-number">{person.contact}</td>
+                <td className="children-count">{person.count}</td>
+                <td className="school-attendance">{person.school_length}</td>
+                <td className="payment-status">{person.payment_status}</td>
+                <td className="job">{person.jobs}</td>
+                <td className="delete-edit">
+                  <button className="edit-btn">
+                    <img
+                      height={24}
+                      width={24}
+                      src={images.pen_icon}
+                      alt="edit"
+                    />
+                  </button>
+                  <button className="delete-btn">
+                    <img
+                      width={24}
+                      height={24}
+                      src={images.deleteIcon}
+                      alt="delete icon"
+                    />
+                  </button>
+                </td>
               </>
             )}
 

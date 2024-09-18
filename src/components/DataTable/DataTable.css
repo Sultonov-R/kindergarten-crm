@@ -13,7 +13,7 @@
     text-align: left;
     border-bottom: none;
     font-size: 14px;
-    border:1px solid red;
+    /* border: 1px solid red; */
 }
 
 .student-table th {
@@ -26,6 +26,44 @@
     text-align: left;
 
 }
+
+.date {
+    width: 20%;
+}
+
+.sum {
+    width: 30%;
+}
+
+
+.children-count {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-status {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-attendance {
+    width: 200px;
+    text-align: center;
+
+}
+
+.names-person {
+    width: 25%;
+}
+
+.level {
+    width: 13%;
+}
+
 
 .checkbox-index {
     display: flex;
@@ -72,6 +110,12 @@
     color: #f44336;
 }
 
+.attendance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .attendance-yes {
     color: #009688;
 }
@@ -104,7 +148,7 @@
 
 .delete-edit {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 10px;
     align-items: center;
 }

@@ -1,13 +1,30 @@
 import React from "react";
 import "./Button.css";
 import images from "../../images";
+import { useNavigate } from "react-router-dom";
 
 function Button({ onFilterClick, showAdd = true }) {
+  const navigate = useNavigate();
+  const handleClickBtn = () => {
+    if (location.pathname.includes("students")) {
+      navigate(`/add-student`);
+    } else if (location.pathname.includes("parents")) {
+      navigate(`/add-parents`);
+    } else if (location.pathname.includes("teachers")) {
+      navigate(`/add-teachers`);
+    } else if (location.pathname.includes("group")) {
+      navigate(`/add-group`);
+    }
+  };
   return (
     <div className="btn-class">
       <div className="table-header-actions">
         {showAdd && (
-          <button className="add-button" type="primary">
+          <button
+            onClick={handleClickBtn}
+            className="add-button"
+            type="primary"
+          >
             <img width={24} src={images.add_icon} alt="add" />
             <span>Qo'shish</span>
           </button>

@@ -5,6 +5,7 @@ import ReportButtons from "../../components/ReportButtons/ReportButtons";
 import Button from "../../components/Button/Button";
 import Filter from "../../components/Filter/Filter";
 import DataTable from "../../components/DataTable/DataTable";
+import Pagination from "../../components/Pagination/Pagination";
 
 function Report() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -37,6 +38,13 @@ function Report() {
         {isFilterOpen && <Filter closeFilter={toggleFilter} />}
       </div>
       <DataTable data={reportsData} type="reports" />
+      <footer className="footer">
+        <div className="income_status">
+          <p>Daromad umumiy summasi:</p>
+          <span>1 000 000 so'm</span>
+        </div>
+        <Pagination />
+      </footer>
     </div>
   );
 }
