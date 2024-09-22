@@ -3,6 +3,11 @@ import "./SaveCancelBtn.css";
 import images from "../../images";
 
 function SaveCancelBtn() {
+
+  const handleSaveClick = () => {
+    
+  };
+
   return (
     <div className="btn-class">
       <div className="table-header-actions">
@@ -10,7 +15,7 @@ function SaveCancelBtn() {
           <img width={24} src={images.failure} alt="failure" />
           <span>Bekor qilish</span>
         </button>
-        <button className="success">
+        <button onClick={() => handleSaveClick()} className="success">
           <img width={24} src={images.success} alt="success" />
           <span>Saqlash</span>
         </button>

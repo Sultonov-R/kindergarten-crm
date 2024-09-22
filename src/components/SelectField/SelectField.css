@@ -1,25 +1,23 @@
-.dropdown-input-container {
+.select-input-container {
     display: flex;
     flex-direction: column;
-    font-family: Arial, sans-serif;
-    margin-bottom: 16px;
 }
 
-.dropdown-input-label {
+.select-input-label {
     font-size: 14px;
     font-weight: bold;
     color: #1f2a44;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
-.dropdown-input-wrapper {
+.select-input-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 
 }
 
-.dropdown-input-field {
+.select-input-field {
     width: 100%;
     padding: 10px 40px 10px 12px;
     font-size: 14px;
@@ -33,11 +31,11 @@
     height: 45px;
 }
 
-.dropdown-input-field:focus {
+.select-input-field:focus {
     outline: none;
 }
 
-.dropdown-icon {
+.select-icon {
     position: absolute;
     right: 10px;
     width: 20px;

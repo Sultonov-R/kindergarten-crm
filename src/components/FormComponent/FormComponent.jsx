@@ -4,6 +4,7 @@ import Input from "../Inputs/Input/Input";
 import Select from "../Select/Select";
 import InputSelect from "../InputSelect/InputSelect";
 import Dropdown from "../Dropdown/Dropdown";
+import SelectField from "../SelectField/SelectField";
 
 const FormComponent = () => {
   const [paymentStatus, setPaymentStatus] = useState("tolangan");
@@ -81,13 +82,13 @@ const FormComponent = () => {
           name="maktabDavomiyligi"
           placeholder="300 kun"
         />
-        <Dropdown
+        <SelectField
           label="To'lov holati"
           options={paymentOptions}
           value={paymentStatus}
           onChange={(e) => setPaymentStatus(e.target.value)}
         />
-        <Dropdown
+        <SelectField
           label="Kasbi"
           options={professionOptions}
           value={profession}

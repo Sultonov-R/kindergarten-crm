@@ -10,8 +10,8 @@ function Button({ onFilterClick, showAdd = true }) {
       navigate(`/add-student`);
     } else if (location.pathname.includes("parents")) {
       navigate(`/add-parents`);
-    } else if (location.pathname.includes("teachers")) {
-      navigate(`/add-teachers`);
+    } else if (location.pathname.includes("teacher")) {
+      navigate(`/add-teacher`);
     } else if (location.pathname.includes("group")) {
       navigate(`/add-group`);
     }

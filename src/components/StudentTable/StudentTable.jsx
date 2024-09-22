@@ -23,12 +23,8 @@ const StudentTable = ({
       className={`student-table ${isCompactView ? "compact" : ""}`}
     >
       <table>
-        <thead>
-          {column.map()}
-        </thead>
-        <tbody>
-          {data.mapt}
-        </tbody>
+        <thead>{column.map()}</thead>
+        <tbody>{data.mapt}</tbody>
       </table>
       <tbody>
         <tr
@@ -36,6 +32,7 @@ const StudentTable = ({
           style={{
             backgroundColor: isChecked ? "#FFFFFF" : "transparent",
             boxShadow: isChecked ? "2px 2px 4px 0px #0000001A" : "",
+            border: "1px solid var(--color-primary-2)",
           }}
         >
           <td style={{ display: "flex", alignItems: "center", gap: "10px" }}>

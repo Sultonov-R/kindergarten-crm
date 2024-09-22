@@ -11,4 +11,6 @@
     justify-content: flex-start;
     gap: 20px;
     align-items:center;
+    margin-left: 20px;
+    margin-top: 50px;
 }
